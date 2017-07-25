@@ -1,7 +1,7 @@
 {% set name = "pytest-base-url" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.1" %}
 {% set hash_type = "sha256" %}
-{% set hash = "e3018b3739a19e66be19c6bfe77d7814acd79a5ca0cab2730fa2d2f483cc7397" %}
+{% set hash = "7425e8163345494ac7f544e99c6f3e5a08f4228bee5e26013b98c462a4d31f6e" %}
 
 package:
   name: {{ name }}
@@ -22,13 +22,13 @@ requirements:
     - setuptools
     - setuptools_scm
     - pytest >=2.7.3
-    - requests
+    - requests >=2.9
 
   run:
     - python
     - setuptools
     - pytest >=2.7.3
-    - requests
+    - requests >=2.9
 
 test:
   imports:
