@@ -14,14 +14,15 @@ Summary: pytest plugin for URL based testing
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pytest-base-url-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pytest-base-url-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/pytest-base-url-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pytest-base-url-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pytest-base-url-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pytest-base-url-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/pytest-base-url-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/pytest-base-url-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pytest-base-url/badges/version.svg)](https://anaconda.org/conda-forge/pytest-base-url)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pytest-base-url/badges/downloads.svg)](https://anaconda.org/conda-forge/pytest-base-url)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pytest--base--url-green.svg)](https://anaconda.org/conda-forge/pytest-base-url) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pytest-base-url.svg)](https://anaconda.org/conda-forge/pytest-base-url) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pytest-base-url.svg)](https://anaconda.org/conda-forge/pytest-base-url) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pytest-base-url.svg)](https://anaconda.org/conda-forge/pytest-base-url) |
 
 Installing pytest-base-url
 ==========================
@@ -66,6 +67,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
