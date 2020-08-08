@@ -1,7 +1,6 @@
 {% set name = "pytest-base-url" %}
-{% set version = "1.4.1" %}
-{% set hash_type = "sha256" %}
-{% set hash = "7425e8163345494ac7f544e99c6f3e5a08f4228bee5e26013b98c462a4d31f6e" %}
+{% set version = "1.4.2" %}
+{% set hash = "7f1f32e08c2ee751e59e7f5880235b46e83496adc5cba5a01ca218c6fe81333d" %}
 
 package:
   name: {{ name }}
@@ -10,12 +9,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash }}
+  sha256: {{ hash }}
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -41,7 +40,7 @@ about:
   license: MPL 2.0
   license_family: OTHER
   license_file: LICENSE
-  summary: 'pytest plugin for URL based testing'
+  summary: pytest plugin for URL based testing
 
 extra:
   recipe-maintainers:
