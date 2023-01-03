@@ -1,47 +1,42 @@
 {% set name = "pytest-base-url" %}
-{% set version = "1.4.1" %}
-{% set hash_type = "sha256" %}
-{% set hash = "7425e8163345494ac7f544e99c6f3e5a08f4228bee5e26013b98c462a4d31f6e" %}
+{% set version = "2.0.0" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pytest-base-url-{{ version }}.tar.gz
+  sha256: e1e88a4fd221941572ccdcf3bf6c051392d2f8b6cef3e0bc7da95abec4b5346e
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python
-    - setuptools
-    - setuptools_scm
-    - pytest >=2.7.3
-    - requests >=2.9
-
+    - poetry-core >=1.0.0
   run:
-    - python
-    - setuptools
-    - pytest >=2.7.3
+    - python >=3.7
+    - pytest >=3.0.0,<8.0.0
     - requests >=2.9
 
 test:
   imports:
     - pytest_base_url
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/pytest-dev/pytest-base-url
-  license: MPL 2.0
-  license_family: OTHER
+  summary: pytest plugin for URL based testing
+  license: MPL-2.0
   license_file: LICENSE
-  summary: 'pytest plugin for URL based testing'
 
 extra:
   recipe-maintainers:
