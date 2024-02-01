@@ -1,13 +1,13 @@
 {% set name = "pytest-base-url" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pytest-base-url-{{ version }}.tar.gz
-  sha256: e1e88a4fd221941572ccdcf3bf6c051392d2f8b6cef3e0bc7da95abec4b5346e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 02748589a54f9e63fcbe62301d6b0496da0d10231b753e950c63e03aee745d45
 
 build:
   noarch: python
@@ -16,12 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
-    - poetry-core >=1.0.0
+    - hatch-vcs >=0.3
+    - hatchling >=1.13
   run:
-    - python >=3.7
-    - pytest >=3.0.0,<8.0.0
+    - python >=3.8
+    - pytest >=7
     - requests >=2.9
 
 test:
